@@ -4,7 +4,9 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import jwt, JWTError
 from app.database import SessionLocal
 from app.repositories.user_repository import UserRepository
+from app.repositories.task_repository import TaskRepository
 from app.services.auth_service import AuthService
+from app.services.task_service import TaskService
 
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM")
@@ -32,3 +34,7 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid or expired token"
         )
+
+def get_task_service(db = Depends(get_db)):
+    repo = TaskRepository(db)
+    return TaskService(repo)
