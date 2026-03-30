@@ -1,6 +1,6 @@
 services:
   app:
-    image: python:3.14-slim
+    image: python:3.14-alpine
     working_dir: /usr/src/app
     ports:
       - ${APP_HOST_PORT}:8000
