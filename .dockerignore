@@ -1,0 +1,51 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual envs
+venv/
+.env/
+.venv/
+
+# Env files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.editorconfig
+
+# Docker
+.dockerignore
+Dockerfile
+Dockerfile*
+docker-compose.yml
+docker-compose.*.yml
+
+# Project specific
+README.md
